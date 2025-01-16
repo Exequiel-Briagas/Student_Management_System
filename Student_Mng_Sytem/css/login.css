@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background-image: url('../images/background.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.form-box {
+    position: relative;
+    width: 400px;
+    height: 450px;
+    background: transparent;
+    border: none;
+    border-radius: 20px;
+    backdrop-filter: blur(15px) brightness(80%);
+    display: flex;
+    flex-direction: column; /* Arrange logo and form vertically */
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* Logo styling */
+.logo {
+    position: relative;
+    top: -30px; /* Slightly position it outside the box */
+    padding: 10px 20px;
+    background-color: white; /* White background */
+    color: #6b33d3;
+    font-weight: bold;
+    font-size: 1.2em;
+    border-radius: 50px; /* Ellipse shape */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for better appearance */
+    z-index: 1; /* Ensure the logo stays above other elements */
+}
+
+/* Form styling */
+h2 {
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+}
+
+p {
+    text-align: left;
+    color: white;
+}
+
+.inputbox {
+    position: relative;
+    margin: 30px 0;
+    width: 310px;
+    border-bottom: 2px solid #fff;
+}
+
+.inputbox label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 1em;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+/* animations: start */
+input:focus ~ label,
+input:valid ~ label {
+    top: -5px;
+}
+
+/* animation:end */
+.inputbox input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 0 35px 0 5px;
+    color: #fff;
+}
+
+/* Initially display the icon */
+.inputbox .input-icon {
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 1.5em;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1; /* Make sure it's visible initially */
+    transition: opacity 0.3s ease; /* Smooth transition for disappearing effect */
+}
+
+/* When the input field is focused, the icon disappears */
+.inputbox input:focus ~ .input-icon {
+    opacity: 0; /* Hide the icon when focused */
+}
+
+/* When the input field is not focused and has no content, the icon is visible */
+.inputbox input:not(:focus):not(:placeholder-shown) ~ .input-icon {
+    opacity: 1; /* Show icon when input is not focused */
+}
+
+/* Password field: Eye icon setup */
+.inputbox .eye-icon {
+    position: absolute;
+    right: 8px; /* Same position as the lock icon */
+    color: #fff;
+    font-size: 1.5em;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0; /* Initially hidden */
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+/* Show the eye icon when the password input is focused */
+.inputbox input[type="password"]:focus ~ .eye-icon {
+    opacity: 1; /* Make the eye icon visible when password field is focused */
+}
+
+/* Show the lock icon when password input is filled and focus is lost */
+.inputbox input[type="password"]:not(:focus):not(:placeholder-shown) ~ .bi-lock-fill {
+    opacity: 1;
+}
+
+/* Hover effect for icon visibility on eye icon */
+.inputbox input[type="password"]:focus ~ .eye-icon {
+    opacity: 1;
+}
+
+/* Optional: Adjust the icon sizes */
+.inputbox .bi-person-fill {
+    font-size: 1.5em; /* Size of the person icon */
+}
+
+.inputbox .bi-lock-fill {
+    font-size: 1.5em; /* Size of the lock icon */
+}
+
+.forget {
+    margin: -10px 0 17px;
+    font-size: 0.9em;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.forget label input {
+    margin-right: 3px;
+}
+
+.forget a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.forget a:hover {
+    text-decoration: underline;
+}
+
+button {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background-color: #fff; /* Initial background color */
+    color: black; /* Default text color */
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for background-color and text color */
+}
+
+/* Active state when button is clicked */
+button:active {
+    background-color: darkviolet;
+    color: white; /* Text turns white when clicked */
+}
+
+/* Hover effect for when user hovers over the button */
+button:hover {
+    background-color: darkviolet; /* Background turns violet when hovering */
+    color: white; /* Text turns white when hovering */
+}
+
+@media screen and (max-width: 480px) {
+    .form-box {
+        width: 100%;
+        border-radius: 0px;
+    }
+}

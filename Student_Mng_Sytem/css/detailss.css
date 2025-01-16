@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+@media print {
+    .table, .table__body {
+        overflow: visible;
+        height: auto !important;
+        width: auto !important;
+    }
+}
+
+/* @page {
+    size: landscape;
+    margin: 0;
+} */
+
+body {
+    min-height: 100vh;
+    background: url(../images/background.jpg) center / cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    transition: transform 0.5s ease; /* Smooth transition */
+}
+
+/* Sidebar Menu Styling */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 90px;
+    background: #fff;
+    overflow: hidden;
+    transition: width 0.5s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10; /* Ensure the nav stays on top */
+}
+
+/* Adjust the main section position on nav hover */
+nav:hover ~ main.table {
+    transform: translateX(200px); /* Adjust the value to match expanded nav width */
+    transition: transform 0.5s ease; /* Smooth transition */
+}
+
+nav:hover {
+    width: 280px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.logo img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1.5px solid #555;
+}
+
+.logo span {
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-left: 10px;
+    white-space: nowrap;
+    background: none;
+    transition: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+li {
+    width: 100%;
+    margin: 10px 0;
+}
+
+a {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #555;
+    font-size: 16px;
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+}
+
+a:hover {
+    background: #f0f0f0;
+    transform: translateX(5px);
+}
+
+a .bi {
+    font-size: 24px;
+    margin-right: 15px;
+    color: #555;
+    transition: color 0.3s, transform 0.3s;
+}
+
+a:hover .bi {
+    color: #8834af;
+}
+
+.nav-item {
+    opacity: 0;
+    transition: opacity 0.3s;
+    white-space: nowrap;
+}
+
+nav:hover .nav-item {
+    opacity: 1;
+}
+
+.logo, .logo span {
+    pointer-events: none;
+    background: none;
+    transform: none;
+}
+
+.logout {
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+}
+
+/* Main Table Section */
+main.table {
+    width: 82vw;
+    height: 90vh;
+    background-color: #fff5;
+    backdrop-filter: blur(7px);
+    box-shadow: 0 .4rem .8rem #0005;
+    border-radius: .8rem;
+    margin-left: 90px; /* Initial margin matching nav width */
+    transition: transform 0.5s ease, margin-left 0.5s ease; /* Smooth transitions */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* Ensure header and body are stacked */
+}
+
+/* Table Header */
+.table__header {
+    width: 100%;
+    height: 10%;
+    background-color: #fff4;
+    padding: .8rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Table Body */
+.table__body {
+    width: 100%;
+    height: 90%; /* Ensure the body takes the remaining height */
+    background-color: #fff;
+    margin: .8rem auto;
+    border-radius: .6rem;
+    overflow: auto;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+}
+
+thead th {
+    background-color: #d5d1defe;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f7f7f7;
+}
+
+tbody tr:hover {
+    background-color: #fff6 !important;
+}
+
+/* Scrollbar Styling */
+.table__body::-webkit-scrollbar {
+    height: 0.8rem;
+}
+
+.table__body::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 0.4rem;
+}
+
+.table__body::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+}
+
+/* Buttons */
+.delete {
+    background-color: rgb(92, 82, 92); /* Solid violet background */
+    color:

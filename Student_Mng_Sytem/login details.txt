@@ -1,0 +1,18 @@
+--------------------------LOGIN INFOS------------------------
+
+
+
+-------Admins------- 
+username: Miya
+password: miya123
+
+username: Khaye
+password: khaye123
+
+
+
+
+
+------Guest--------
+username: JJ
+password: jj123
