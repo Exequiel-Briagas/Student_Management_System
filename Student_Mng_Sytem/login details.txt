@@ -1,18 +1,14 @@
---------------------------LOGIN INFOS------------------------
+--------------------------LOGIN  CREDENTIALS------------------------
 
 
 
 -------Admins------- 
-username: Miya
-password: miya123
-
-username: Khaye
-password: khaye123
-
+username: Zike
+password: Zike123
 
 
 
 
 ------Guest--------
-username: JJ
-password: jj123
+username: user
+password: user123
